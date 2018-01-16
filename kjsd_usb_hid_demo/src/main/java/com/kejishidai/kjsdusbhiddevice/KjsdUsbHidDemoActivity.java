@@ -19,7 +19,6 @@ public class KjsdUsbHidDemoActivity extends Activity implements View.OnClickList
     private Button btnCloseHid = null;
     private Button btnExitApp = null;
     private TextView tvInputDetails = null;
-    private KjsdUsbHidDevice kjsdUsbHidDevice = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class KjsdUsbHidDemoActivity extends Activity implements View.OnClickList
         tvInputDetails = (TextView) findViewById(R.id.TvInputDetails);
         tvInputDetails.setMovementMethod(ScrollingMovementMethod.getInstance());
 
-        kjsdUsbHidDevice.getInstance().openDevice();
+        KjsdUsbHidDevice.getInstance().openDevice();
 
         btnOpenHid.setOnClickListener(this);
         btnSendKey.setOnClickListener(this);
@@ -47,7 +46,7 @@ public class KjsdUsbHidDemoActivity extends Activity implements View.OnClickList
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        kjsdUsbHidDevice.getInstance().closeDevice();
+        KjsdUsbHidDevice.getInstance().closeDevice();
     }
 
     @Override
@@ -55,7 +54,7 @@ public class KjsdUsbHidDemoActivity extends Activity implements View.OnClickList
         boolean result = false;
         String strDisplayText = "";
         if(v.getId() == R.id.BtnOpenHid){
-            result = kjsdUsbHidDevice.getInstance().openDevice();
+            result = KjsdUsbHidDevice.getInstance().openDevice();
             if(result) {
                 strDisplayText = "设备打开成功.\n";
             }else{
@@ -64,9 +63,9 @@ public class KjsdUsbHidDemoActivity extends Activity implements View.OnClickList
             tvInputDetails.append(strDisplayText);
         }else if(v.getId() == R.id.BtnSendKey){
             String strInputKeyDesc = etInputKeyDesc.getText().toString();
-            byte[] baScancode = kjsdUsbHidDevice.getInstance().getScancode(strInputKeyDesc);
+            byte[] baScancode = KjsdUsbHidDevice.getInstance().getScancode(strInputKeyDesc);
             strDisplayText = "扫描码："+getHexString(baScancode);
-            result = kjsdUsbHidDevice.getInstance().sendKey(strInputKeyDesc);
+            result = KjsdUsbHidDevice.getInstance().sendKey(strInputKeyDesc);
             if(result){
                 strDisplayText += "发送成功.\n";
             }else{
@@ -78,7 +77,7 @@ public class KjsdUsbHidDemoActivity extends Activity implements View.OnClickList
                 tvInputDetails.scrollTo(0, tvInputDetailsOffset - tvInputDetails.getHeight());
             }
         }else if(v.getId() == R.id.BtnCloseHid){
-            result = kjsdUsbHidDevice.getInstance().closeDevice();
+            result = KjsdUsbHidDevice.getInstance().closeDevice();
             if(result) {
                 strDisplayText = "设备关闭成功.\n";
             }else{

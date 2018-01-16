@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_kjsd_usb_hid_demo"
     android:layout_width="match_parent"
@@ -11,69 +11,81 @@
     android:orientation="vertical"
     tools:context="com.kejishidai.kjsdusbhiddevice.KjsdUsbHidDemoActivity">
 
-    <EditText
-        android:id="@+id/EtInputKeyDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="@dimen/edittext_input_textsize"
-        android:textAlignment="center"
-        android:text="@string/et_default_key_desc"
-        android:maxLines="1"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <Button
-            android:id="@+id/BtnOpenHid"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="10px"
-            android:layout_marginBottom="10px"
-            android:background="@drawable/button_background"
-            android:layout_gravity="center"
-            android:textSize="@dimen/button_textsize"
-            android:textColor="@color/button_text_color"
-            android:textAlignment="center"
-            android:text="@string/btn_open_hid"/>
-        <Button
-            android:id="@+id/BtnSendKey"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="10px"
-            android:layout_marginBottom="10px"
-            android:background="@drawable/button_background"
-            android:layout_gravity="center"
-            android:textSize="@dimen/button_textsize"
-            android:textColor="@color/button_text_color"
-            android:textAlignment="center"
-            android:text="@string/btn_send_key"/>
-        <Button
-            android:id="@+id/BtnCloseHid"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginTop="10px"
-            android:layout_marginBottom="10px"
-            android:background="@drawable/button_background"
-            android:layout_gravity="center"
-            android:textSize="@dimen/button_textsize"
-            android:textColor="@color/button_text_color"
-            android:textAlignment="center"
-            android:text="@string/btn_close_hid"/>
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/TvInputDetails"
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:scrollbars="vertical"
-        android:fadeScrollbars="false"
-        android:layout_alignParentBottom="true"
-        android:textAlignment="center"
-        android:text=""/>
+        android:layout_above="@+id/BtnExitApp"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/EtInputKeyDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="@dimen/edittext_input_textsize"
+            android:textAlignment="center"
+            android:text="@string/et_default_key_desc"
+            android:maxLines="1"/>
+        <LinearLayout
+            android:id="@+id/llUsbHidLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:layout_marginBottom="10px"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/BtnOpenHid"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@drawable/button_background"
+                android:layout_gravity="center"
+                android:textSize="@dimen/button_textsize"
+                android:textColor="@color/button_text_color"
+                android:textAlignment="center"
+                android:text="@string/btn_open_hid"/>
+            <Button
+                android:id="@+id/BtnSendKey"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@drawable/button_background"
+                android:layout_gravity="center"
+                android:textSize="@dimen/button_textsize"
+                android:textColor="@color/button_text_color"
+                android:textAlignment="center"
+                android:text="@string/btn_send_key"/>
+            <Button
+                android:id="@+id/BtnCloseHid"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="10px"
+                android:layout_marginBottom="10px"
+                android:background="@drawable/button_background"
+                android:layout_gravity="center"
+                android:textSize="@dimen/button_textsize"
+                android:textColor="@color/button_text_color"
+                android:textAlignment="center"
+                android:text="@string/btn_close_hid"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TvInputDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:scrollbars="vertical"
+            android:fadeScrollbars="false"
+            android:layout_alignParentBottom="true"
+            android:textAlignment="center"
+            android:text=""/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/BtnExitApp"
@@ -81,10 +93,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10px"
         android:layout_marginBottom="10px"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/button_background"
         android:layout_gravity="center"
         android:textSize="@dimen/button_textsize"
         android:textColor="@color/button_text_color"
         android:textAlignment="center"
-        android:text="@string/btn_close_hid"/>
-</LinearLayout>
+        android:text="@string/btn_exit_app"/>
+</RelativeLayout>
