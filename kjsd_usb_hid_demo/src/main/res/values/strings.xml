@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">可即时代USB HID键盘演示Demo</string>
-    <string name="et_default_key_desc">shift k j s d</string>
-    <string name="btn_send_key">发送</string>
+    <string name="et_default_key_desc">left-shift k j s d</string>
+    <string name="btn_open_hid">打开设备</string>
+    <string name="btn_send_key">发送键值</string>
+    <string name="btn_close_hid">关闭设备</string>
+    <string name="btn_exit_app">退出演示程序</string>
 </resources>

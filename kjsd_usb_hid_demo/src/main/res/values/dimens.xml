@@ -3,5 +3,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="edittext_input_textsize">20sp</dimen>
-    <dimen name="button_textsize">16sp</dimen>
+    <dimen name="button_textsize">20sp</dimen>
 </resources>

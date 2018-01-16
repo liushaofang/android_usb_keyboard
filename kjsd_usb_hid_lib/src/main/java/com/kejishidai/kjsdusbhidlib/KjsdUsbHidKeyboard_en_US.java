@@ -252,10 +252,11 @@ public class KjsdUsbHidKeyboard_en_US extends KjsdUsbHidKeyboard{
             int scanCodeDataIndex = 2;
             StringTokenizer st = new StringTokenizer(key);
             while(st.hasMoreTokens()){
+                String tokenKey = st.nextToken();
                 Byte tokenData = null;
-                if((tokenData = keyboardModifier.get(st.nextToken())) != null) {
+                if((tokenData = keyboardModifier.get(tokenKey)) != null) {
                     scanCode[0] |= tokenData.byteValue();
-                }else if((tokenData = keyboardValue.get(st.nextToken())) != null && scanCodeDataIndex < 8){
+                }else if((tokenData = keyboardValue.get(tokenKey)) != null && scanCodeDataIndex < 8){
                     scanCode[scanCodeDataIndex] = tokenData.byteValue();
                     scanCodeDataIndex++;
                     if(scanCodeDataIndex >= 8)

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KjsdUsbHidDevice.iml" filepath="$PROJECT_DIR$/KjsdUsbHidDevice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android_usb_keyboard.iml" filepath="$PROJECT_DIR$/android_usb_keyboard.iml" />
       <module fileurl="file://$PROJECT_DIR$/kjsd_usb_hid_demo/kjsd_usb_hid_demo.iml" filepath="$PROJECT_DIR$/kjsd_usb_hid_demo/kjsd_usb_hid_demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/kjsd_usb_hid_lib/kjsd_usb_hid_lib.iml" filepath="$PROJECT_DIR$/kjsd_usb_hid_lib/kjsd_usb_hid_lib.iml" />
     </modules>
