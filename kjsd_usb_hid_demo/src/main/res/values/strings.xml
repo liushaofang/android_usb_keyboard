@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">可即时代USB HID键盘演示Demo</string>
+    <string name="et_default_key_desc">shift k j s d</string>
+    <string name="btn_send_key">发送</string>
+</resources>
